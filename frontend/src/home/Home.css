@@ -1,0 +1,44 @@
+.home-container {
+    display: flex;
+    height: 100vh;
+    /* background: url("../public/bg.jpg") center center fixed; */
+    background-size: cover;
+    color: #fff;
+}
+
+.sidebar {
+    width: 450px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay for readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.message-container {
+    flex-grow: 1;
+    padding: 20px;
+    padding-top: 0;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for improved contrast */
+    color: #fff; /* Ensures text remains visible */
+    border-radius: 8px; /* Softens edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+
+@media (max-width: 800px) {
+    .home-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar{
+        width: 90%;
+        height: 500px;
+    }
+    .message-container{
+        height: fit-content;
+        width: 90%;
+        overflow-x: hidden;
+    }
+}

@@ -1,0 +1,272 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+    background-color: #1f1f1f;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling */
+    scrollbar-width: thin; /* Firefox - thin scrollbar */
+    scrollbar-color: #333 #1f1f1f; /* Firefox - scrollbar track and thumb colors */
+}
+
+/* Chrome, Edge, and Safari */
+.sidebar-container::-webkit-scrollbar {
+    width: 8px; /* Make the scrollbar width smaller */
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+    background: #1f1f1f; /* Match background color */
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #333; /* Scroll thumb color */
+    border-radius: 4px; /* Rounded scrollbar */
+    border: 2px solid #1f1f1f; /* Optional: Adds padding around scrollbar thumb */
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+.sidebar-search-bar {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 1rem;
+}
+
+.sidebar-profilepic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sidebar-profilepic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.sidebar-search-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+}
+
+.sidebar-search-button {
+    background-color: #ff4081;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-search-button:hover {
+    background-color: #ff1a68;
+}
+
+.sidebar-search-icon {
+    color: #fff;
+    font-size: 18px;
+}
+
+.sidebar-divider {
+    width: 90%;
+    height: 1px;
+    background-color: #444;
+    margin: 8px 0;
+}
+
+.sidebar-search-results, .sidebar-chat-users {
+    width: 90%;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.sidebar-user:hover {
+    background-color: #292929;
+}
+
+.sidebar-user-selected {
+    background-color: #383838;
+    border: 1px solid #555;
+}
+
+.sidebar-user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.sidebar-user-name {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.sidebar-no-users h1 {
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+}
+
+
+.revert-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px;
+}
+
+.revert-arrow button {
+    background-color: #444;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.revert-arrow button:hover {
+    background-color: #ff4081;
+    transform: scale(1.1);
+}
+
+.revert-arrow svg {
+    color: #fff;
+    font-size: 24px;
+}
+
+
+
+/* Logout button wrapper */
+.logout {
+    position: fixed;
+    bottom: 30px; /* Distance from bottom of sidebar */
+    left: 30px; /* Distance from left edge of sidebar */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Button styling */
+.logout-button {
+    background-color: #ff4d4f; /* Bright red */
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #ff1a1c;
+    transform: scale(1.05);
+}
+
+/* Icon styling */
+.logout-icon {
+    color: #fff;
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+/* Text styling */
+.logout-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff4d4f;
+    transition: color 0.3s ease;
+}
+
+.logout:hover .logout-text {
+    color: #ff1a1c;
+}
+
+
+/* Online Status Styling */
+.sidebar-user-avatar.online img {
+    border: 2px solid #4CAF50; /* Green border for online status */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Soft green glow */
+}
+
+.sidebar-user-avatar.online::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    border: 2px solid #1f1f1f;
+}
+
+/* Positioning fix for the sidebar-user-avatar */
+.sidebar-user-avatar {
+    position: relative;
+}
+
+/* Notification Badge Styling */
+.number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red; /* Badge color */
+    color: white;
+    font-size: 12px; /* Adjust font size */
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 10rem; /* Space between username and badge */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+@media (max-width: 800px) {
+   
+   .logout>span{
+    display: none;
+   }
+}
