@@ -152,7 +152,7 @@ export default function Sidebar({ onSelectUser }) {
                 <div className="sidebar-search-results">
                     {searchUser
                         .filter((user) => user?.username && user?.profilepic) // Filter out users with missing data
-                        .map((user) => (
+                        .map((user,index) => (
                             <div
                                 key={user?._id || Math.random()}
                                 className={`sidebar-user ${selectedUserId === user?._id ? 'sidebar-user-selected' : ''}`}

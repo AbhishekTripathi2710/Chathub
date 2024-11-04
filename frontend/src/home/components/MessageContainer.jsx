@@ -44,7 +44,6 @@ export default function MessageContainer({ onbackUser }) {
         }
         if (selectedConversation?._id) getMessages();
     }, [selectedConversation?._id, setMessage])
-    console.log(messages);
 
     const handleMessage = (e)=>{
         setSendData(e.target.value)

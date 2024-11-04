@@ -19,7 +19,7 @@ export default function Login() {
         ...userInput,[e.target.id]:e.target.value
     })
   }
-  console.log(userInput);
+ 
   
 
   const handleSubmit =async  (e) => {
