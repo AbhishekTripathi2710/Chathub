@@ -1,4 +1,4 @@
-import {Server} from 'socket.io';
+import { Server } from "socket.io";
 import http from 'http';
 import express from 'express';
 
@@ -12,21 +12,21 @@ const io = new Server(server,{
     }
 });
 
-export const getReciverSocketId = (receverId)=>{
+export const getReciverSocketId = (receverId) =>{
     return userSocketmap[receverId];
 };
 
-const userSocketmap={}; //{userId,socketId}
+const userSocketmap={};
 io.on('connection',(socket)=>{
     const userId = socket.handshake.query.userId;
 
     if(userId !== "undefine") userSocketmap[userId] = socket.id;
-    io.emit("getOnlineUsers",Object.keys(userSocketmap))
+    io.emit("getOnlineUsers", Object.keys(userSocketmap))
 
     socket.on('disconnect',()=>{
         delete userSocketmap[userId],
-        io.emit('getOnlineUsers',Object.keys(userSocketmap))
+        io.emit("getOnlineUsers", Object.keys(userSocketmap))
     });
 });
 
-export {app , io , server}
+export {app,io,server};
