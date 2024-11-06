@@ -5,20 +5,12 @@ import authRouter from './route/authUser.js';
 import messageRouter from './route/messageRoute.js';
 import userRouter from './route/userRout.js';
 import cookieParser from 'cookie-parser';
-import cors from 'cors';
 import {app, server} from './Socket/socket.js'
 import path from 'path';
 
 const __dirname = path.resolve();
 
 dotenv.config();
-
-app.use(cors({
-    origin: ['https://chathub2-0.onrender.com'],  // Your frontend domain
-    methods: ['GET', 'POST'],
-    credentials: true
-}));
-
 
 app.use(express.json());
 app.use(cookieParser());
